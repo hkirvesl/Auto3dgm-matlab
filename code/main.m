@@ -136,7 +136,7 @@ pa = reduce( ds, pa, n_jobs );
 %% Globalization
 % 'ga' stands for global alignment
 mst     = graphminspantree( sparse( pa.d + pa.d' ) );
-ga      = globalize( pa, mst+mst', ds.base); 
+ga      = globalize( pa, mst+mst', ds.base, type); 
 ga.k    = k;
 
 plot_tree( pa.d+pa.d', mst, ds.names, 'mds', ones(1,ds.n),'');
@@ -171,7 +171,7 @@ pa = reduce( ds, pa, n_jobs );
 
 %% Globalization
 % mst is the same as before
-ga     = globalize( pa, mst , ds.base);
+ga     = globalize( pa, mst , ds.base, type);
 ga.k   = k;
 
 %% Output higher resolution
